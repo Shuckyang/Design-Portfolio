@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en-ca">
+
+<head>
+<style>
+    div.center {
+        text-align: center;
+    }
+
+    div.right {
+        text-align: right;
+    }
+</style>
+
+	<meta charset="utf-8">
+	<meta name="author" content="Sonia Ng">
+	<meta name="description" content="ENSH 401 website to share community knowledge using Wiimotes with MAX">
+	<meta name="viewport" content="width=device-width, inital-scale=1">
+	<title> Interactive Programming For Music Using MAX</title>
+</head>
+
+<body>
+<div class="center">
+    <h1> Interactive Programming For Music Using MAX </h1>
+	<h3>꒰ᐢ. .ᐢ꒱₊˚⊹ A site for using MAX/MSP for making music with Wiimotes! ⊹˚₊꒰ᐢ. .ᐢ꒱</h3>
+</div>
+<div class="right">
+	<p> 
+        By: Sonia Ng <br>
+		For ENSH 401 
+    </p>
+</div>
+
+<hr><!--- line -->
+ 
+    <h3>Hello.</h3> 
+    <p>
+        This site is intended to showcase and demostrate how to use Wiimotes with MAX!
+        <br>
+        I'll be going in-depth from setting up your Wiimotes, generating sounds with it, and showcasing
+        example works that can be used as inspirating for your own projects.
+	</p>
+
+<br>
+
+    <nav>
+        <h2>⋆ ˚｡⋆୨୧˚ Table of Content ˚୨୧⋆｡˚ ⋆</h2>
+        <ul>
+            <li><a href="#What-is-MAX?">What is MAX? (❀ˆᴗˆ)(•́ᴗ•̀✿)</a></li>
+            <li><a href="#Adding-Wiimotes">Adding Wiimotes ♪(๑ᴖ◡ᴖ๑)♪</a></li>
+            <li><a href="#Example-Max-Patches">Example Max Patches (૭ ｡•̀ ᵕ •́｡ )૭</a></li>
+            <li><a href="#References-and-Useful-Resources">References and Useful Resources</a></li>
+        </ul>
+    </nav>
+
+<div class="center"><p>⸜(｡˃ ᵕ ˂ )⸝♡  ૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა ଘ(੭ˊᵕˋ)੭* ੈ</p></div>
+
+    <article id="What-is-MAX?">
+        <header>
+            <h2>What is MAX?</h2>
+        </header>
+        <p>
+            MAX/MSP/Jitter or more commonly just known as <strong>MAX</strong> is a visual programming
+            language intended for creating music and multimedia projects!
+        </p>
+        <br>
+        <div class="center">
+            <a href=https://cycling74.com/products/max>Click here to go to the MAX website!</a>
+            <br>
+            <p>
+                MAX is not free. You get a 30 day trial period and afterwards you'll have to pay $9.99 USD/month.
+            </p>
+        </div>
+
+        <p>
+            <br> <br>
+            The main idea when using MAX is connecting objects to one another. Objects communicate with
+            eachother through patch cords. The more objects your MAX patch (What MAX calls the programs you create with it) has, the more
+            complicated it becomes. For a more in-depth tutorial on using MAX, <a href=https://docs.cycling74.com/max8/tutorials/00_maxindex>check out the MAX documentation site!</a>
+        </p>
+        <br>
+        <img src="assets/max_1.png" alt="screenshot of a simple counter Max patch">
+        <p> 
+            This is a simple counter. Notice how each object is connected in the patch.
+            <br>
+            Now there are several objects in MAX that you can interactive with. But for now, I will only
+            be discussing the objects that will be used for implementing the Wiimotes to MAX.
+            <br> <br>
+            <em>
+                For more information on objects, you can always type <code>Ctrl+Shift+H</code> for help
+                on the object.
+            </em>
+        </p>
+
+    </article>
+    <br>
+    <br>
+    
+    <div class="center"><p>૮₍˶ •. •⑅₎ა♡ ૮₍•᷄ ࡇ •᷅₎ა ♡ᰔ૮₍ ˃ ⤙ ˂ ₎ა</p></div>
+    
+    <article id="Adding-Wiimotes">
+        <header>
+            <h2>Adding Wiimotes</h2>
+        </header>
+        <h3>⊹ ࣪ ˖ 1. Downloading Osculator ⊹ ࣪ ˖</h3>
+        <p>
+            The first step is collecting data from the Wii remotes and inputing it into MAX.
+            To do this you will need a secondary program called <strong><a href=https://osculator.net/>Osculator</a></strong>.
+            <br>
+            Osculator supports Open Sound Control (OSC) protocol(this will be important for later).
+        </p>
+        <img src="assets/osculator_1.png" alt="screenshot of the osculator.net download page" width="700" height="300">
+        <p>
+            <strong>⋆ IMPORTANT TO KNOW ⋆</strong>
+        </p>
+            <ul>
+                <li><strong>If you're not using macOS this will not work.</strong></li>
+                <li><strong>If you're running on anything newer than macOS </strong><a href = https://support.apple.com/en-ca/HT211683/>Big Sur</a> then this will super not work :D</li>
+                <li><strong>Finally, if you are using bootleg Wiimotes than that will not work as well.</strong></li>
+            </ul>
+        <p>
+            Osculator is technically free. However when running this program, a popup will appear asking for money every 20 minutes. This goes away if you decide to pay $23.99 USD for Osculator.
+            <br>
+            Although there are many other programs out there (and are probably free) that do the same job, Osculator is the most popular choice out there for this niche topic 
+            and the simplest to setup.
+            <br> <br>
+            Additionally, here is the <a href = https://osculator.net/doc/faq:wiimote/>FAQ on using Wiimotes on the Osculator website</a>
+        </p>
+        <br>
+
+        <h3>⊹ ࣪ ˖ 2. Connecting Wiimotes ⊹ ࣪ ˖</h3>
+        <p>
+            Now that you have downloaded Osculator, <strong>make sure bluetooth is turned on!</strong> This is also why Osculator
+            will not work with newer versions of the macOS, due to a change of bluetooth settings on Apple's part.
+        </p>    
+            <br>
+            <img src="assets/parameters.png" alt="screenshot of Osculator parameters" width="450" height="400">
+        <p>    
+            Next, turn your Wiimotes on. Head to the parameters over on Osculator, under devices, click on the Wiimote section and click 'Pair a Wiimote'.
+            <br>
+            At this point, you will want to hold both the <code>A</code> and <code>B</code> buttons on your Wiimote to connect. If this doesn't work, try pressing
+            the <code>sync</code> button on the back of the Wiimote.
+            <br>
+            If all went well, you should see your Wiimote show up on the table.
+            <br> <br>
+            Osculator gives you 8 slots. So if you had more wiimotes, you can just repeat the previous steps to connect them all.
+            <br>
+        </p>
+            <img src="assets/Osculator_PTR.png" alt="diagram of Pitch, Yaw, and Roll on the Wiimote. Taken from Osculator.net" width="350" height="300">
+        <p>
+            The diagram above showcases the different angles/movements that are registered with Osculator. All this will be translated into data as output
+            from Osculator which you can then route to MAX.
+            <br>
+            By default, Osculator will give you the pitch, roll, and yaw. If you want the additional x,y, and z data, you can check the the box off titled 
+            <em>Accelerometers</em> under the Advanced section in parameters.
+            <br>
+            Buttons on the Wiimote can also be taken in as data from Osculator and be routed to MAX as well! Press on the buttons on the Wiimote, this should
+            populate the main table with new messages.
+        </p>    
+            <br> <br>
+            <img src="assets/osculator_2.png" alt="screenshot of Osculator" width="850" height="400">
+        <p>
+            For each message you have, make sure the 'Event Type' table is marked to be <strong>OSC Message</strong>.
+            <br>
+            For the 'Value' column, click on <em>New...</em> then click on the <em>gear symbol</em> and change your localhost to the one for Max/MSP.
+            <br>
+            Rememebr the number assigned to this localhost, you will need it for later.
+            <br> <br>
+            When your done, make sure to save this so you don't have to run through this whole process everytime you connect your wiimotes.
+            <br> <br>
+            Sometimes reading a tutorial is hard to follow. For those who want a video version of setting up Osculator, please see the 
+            <a href="#References-and-Useful-Resources">References and Useful Resources</a> section.
+        </p>
+        <br>
+        
+        <h3>⊹ ࣪ ˖ 3. Wii to MAX ⊹ ࣪ ˖</h3>
+        <img src="assets/layout.png" alt="screenshot receiving data from Osculator on MAX" width="350" height="300">
+
+        <p> 
+            You want to be able to recieve OSC messages from Osculator to MAX.
+        </p>
+            <br>
+            <img src="assets/udpreceive.png" alt="screenshot of udpreceive object">
+        <p>
+            Create an object called <strong><code>udpreceive</code></strong>.
+            <br>
+            For <strong><code>udpreceive</code></strong> to work, it needs to connect to a port to listen to.
+            <br>
+            <strong>The port you enter for <code>udpreceive</code> must be the same OSC Input Port given in Osculator.</strong>
+        </p>
+            <br>
+            <img src="assets/route.png" alt="screenshot of route object">
+        <p>
+            Next create another object starting with <code>route/ </code> followed by the message on the osculator for what you want to be received by MAX.
+        </p>
+            <br>
+            <img src="assets/unpack.png" alt="screenshot of the unpack object">
+        <p>
+            Make another object called <code>unpack</code> followed by <code>f</code>. The number of <code>f</code>'s correlate to the amount of data recieved from that message
+        </p>    
+            <br>
+            <img src="assets/float.png" alt="screenshot of the float object">
+        <p>
+            (i.e for <code>route/wii/1/accel/xyz</code> you'll need <code>unpack f f f f</code> for x, y, and z data)
+            <br>
+            Now create a number object(I reccomened using float for more precision) and connect it to each output of the <code>unpack</code>.
+            <br> <br>
+            Now try interacting with your Wiimote. If set up correctly you should notice the numbers changing :D
+        </p>
+
+    </article>
+    <br>
+    <br>
+    <div class="center"><p>( ˊᵕˋ )♡.°⑅˙˚ଘo(  ❛ั ᵕ ❛ั )੭່˙</p></div>
+
+    <article id="Example-Max-Patches">
+        <header>
+            <h2>Example Max Patches</h2>
+        </header>
+        <p>
+            As mentioned before, <strong>MAX IS NOT FREE.</strong> If you finish the trial and still don't pay for MAX, 
+            you are not allowed to save your work 
+            <br>
+            (which is why instead of sharing download links to my max patches, I'm sharing screenshots...).
+        </p>
+            <br>
+        <img src="assets/wii_controls_patcher.png" alt="screenshot of Wii_controls on MAX" width="650" height="400">
+        <p>
+            This MAX patch showcases all of the routing possible for the buttons/movements available to be tracked on Osculator.
+            <br>
+            The <code>send</code> and <code>recieve</code> objects act as substitutes for patch chords. I mostly use them them for a cleaner view of my MAX patches.
+            <br>
+            If you had more than one Wiimote, then for each Wiimote, copy the above and change the number from 1 to the corresponding Wiimote.
+        </p>
+            <br> <br>
+            <img src="assets/oscillator.png" alt="screenshot of an oscillator with Wiimotes on MAX" width="175" height="500">
+        <p>
+            <code>p wii controls</code> contains the patch in the previous photo. The <code>p</code> object allows you to create a MAX patch within a patch,
+            usually helpful when your projects become quite large. This patch demostrates using a simple oscillator with the yaw outputs from Osculator.
+            <br> <br>
+            Video demostration of the patch:
+        </p>
+        <video width="560" height="315" controls>
+            <source src="assets/demo.mp4" type="video/mp4">
+            <source src="assets/demo.mp4" type="video/webm">
+            Your browser doesn't support HTML5 video.
+        </video>
+    </article>
+    <br>
+    <br>
+    <div class="center"><p>(´｡• ᵕ •｡`)( ੭ ･ᴗ･ )੭</p></div>
+
+    <article id="References-and-Useful-Resources">
+        <header>
+            <h2>References and Useful Resources</h2>
+        </header>
+        <p>Video showing how to setup Osculator. It is quite old but the actions are still the same as the current versions of MAX and Osculator.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/trTeXfmD1ao?si=Nc3692zD11uaxhLP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <br><br><br>
+        <p>An example of someone using the Wiimotes with Osculator in MAX.
+            <br>
+            (if you scroll down to the comments, he links to where you can copy his MAX patch and test
+            it for yourself)
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FPHKxvMmaVY?si=VAMSIYxoySqoIAZ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <br><br><br>
+        <p>
+            Me performing with Wiimotes for my final project in MUS407. I utilized two Wiimotes with MAX's<a href=https://cycling74.com/tutorials/a-few-minutes-with-beap-tutorial-seriesMAX/> BEAP synthesizer</a>.
+            <br>
+            The Wiimmotes controlled mainly amplitude and frequencies. Buttons were used to change between filters and effects. 
+        </p>
+        <video width="560" height="315" controls>
+            <source src="assets/Recital.mp4" type="video/mp4">
+            <source src="assets/Recital.mp4" type="video/webm">
+            Your browser doesn't support HTML5 video.
+        </video>
+    </article>
+    <br>
+    <br>
+    
+    <aside id="about">
+        <header>
+            <h2>About Me</h2>
+        </header>
+        <p>
+            Hello My name is Sonia. I'm in the Combined Computer Science and Music Program at the University of Victoria.
+            <br>
+            Since joining the program, I've been working on MAX and creating several projects with this program. The most recent project involved Wiimotes! 
+            MAX is a program I really enjoy working with. Mainly because its a visual programming tool so you can see what is happening in real-time unlike most
+            programming languages.
+            <br>
+            I like cats.
+        </p>
+    </aside>
+    <hr> 
+    <div id="footer" class="site-footer">
+        <div class="wrap">
+               
+                <p>University of Victoria | ENSH 404 | 2023</p>
+    
+        </div><!--.wrap-->
+        </div>
+</body>
+</html>

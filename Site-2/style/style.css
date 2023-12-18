@@ -1,0 +1,202 @@
+/* Good Style Sheet */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+/* Background colour, margin, and paddings */
+html,
+body,
+div{
+  margin: 0px;
+  padding: 0px;
+}
+
+#header {
+  background-image: url('../assets/background.png');
+}
+
+#title,
+article {
+    padding: 15px 15px 25px 15px;
+}
+body {
+  background-color: #e4e4e4;
+}
+aside{
+  padding: 15px 15px 25px 15px;
+  background-color: #595959;
+}
+
+.wrap{
+  padding: 15px 15px 25px 15px;
+}
+
+/* Text ------------------------------ */
+
+a{
+  color: #76afb5;
+}
+
+h1 {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 48px;
+  color: #333333;
+}
+
+h2 {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 38px;
+  color: #333333;
+}
+
+h3 {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 20px;
+  color: #333333;
+}
+
+p {
+  font-family: "monaco",monospace;
+  font-size: 15px;
+  line-height: 23.4px;
+  color: #333333;
+}
+ol {
+  padding: 0px 400px 20px 70px;
+}
+li {
+  padding-bottom: 20px;
+  font-family: "monaco",monospace;
+  font-size: 15px;
+  line-height: 23.4px;
+  color: #333333;
+}
+
+.aside-style {
+  color: #CEE5E8;
+}
+
+#hello-style {  /*For the introduction section at the top */
+  margin: 0px;
+  padding: 0px;
+  padding: 20px 15px 0px 15px;
+}
+#hello-style p:nth-of-child(1){
+  padding: 0px 15px 25px 15px;
+}
+
+.p-style { /*Padding <p> tags to be more compact */
+  padding-right:500px;
+  padding-left: 25px
+}
+
+.p2-style {
+padding-right: 80px; 
+padding-bottom: 20px;
+}
+.a-style{
+  font-size: 18px;
+}
+
+@media screen and (max-width: 600px) { /*mobile viewing */
+  .p-style { /*Padding <p> tags to be more compact */
+    padding: 20px 0px 0px 15px;
+  }
+  li {
+    padding-right: 5px;
+
+    padding-bottom: 20px;
+  }
+  ol {
+    padding: 0px 0px 20px 15px;
+  }
+}
+
+
+/* Images/Videos ------------------------------ */
+
+.column { /* For two images on same line  and text */
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.center {
+  text-align: center;
+}
+.left{
+  text-align: left;
+  padding-left: 25px
+}
+.bottom {
+  text-align: bottom;
+}
+
+img {
+  max-width: 100%;
+  min-width: 300px;
+  height: auto;
+}
+
+.right img{
+  text-align: right;
+  float:inline-end;
+}
+
+.img-tspace { /*Add spacing above image*/
+  padding-top: 20px;
+}
+
+.box {
+  background-color: #595959;
+  border:10px solid #595959;
+  border-radius: 5px;
+}
+
+.box h3{
+  color: #e4e4e4;
+}
+.box p{
+  color: #e4e4e4;
+}
+
+
+/* Navigation bar ------------------------------ */
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #595959;
+}
+nav li {
+  float: left;
+  padding: 0;
+
+}
+nav li a {
+  font-family: monaco;
+  display: block;
+  color: #CEE5E8;
+  text-align: center;
+  padding: 12px 20px;
+  text-decoration: none;
+}
+nav li a:hover {
+  background-color: #333333;
+}
